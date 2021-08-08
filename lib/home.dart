@@ -28,15 +28,15 @@ class _HomePageState extends State<HomePage> {
               child: TwentyTwenty(
                 key: twentyKey,
                 handleColor: Colors.white,
-                firstChild: Image(
-                  fit: BoxFit.cover,
+                leftChild: Image(
+                  fit: BoxFit.fill,
                   image: NetworkImage(
                       "https://d33wubrfki0l68.cloudfront.net/b3df57665d1b6eca0bb5ade611ba19a5439cdc70/f5820/playground/uploads/upload/upload/28/sample-after.png"),
                 ),
-                secondeChild: Image(
-                  fit: BoxFit.cover,
+                rightChild: Image(
+                  fit: BoxFit.fill,
                   image: NetworkImage(
-                      "https://d33wubrfki0l68.cloudfront.net/b3df57665d1b6eca0bb5ade611ba19a5439cdc70/f5820/playground/uploads/upload/upload/28/sample-after.png"),
+                      "https://d33wubrfki0l68.cloudfront.net/7e3a182a7f6cbfef5587ba5e305fd2f82c03f646/160c9/playground/uploads/upload/upload/29/sample-before.png"),
                 ),
               ),
             ),
