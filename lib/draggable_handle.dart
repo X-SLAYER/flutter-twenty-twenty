@@ -4,9 +4,14 @@ class DraggableHandler extends StatefulWidget {
   final ValueChanged<double>? valueChanged;
   final ValueChanged<Offset>? offsetChanged;
   final double defaulPostion;
+  final Color? handleColor;
 
-  DraggableHandler(
-      {this.valueChanged, this.defaulPostion = .0, this.offsetChanged});
+  DraggableHandler({
+    this.valueChanged,
+    this.defaulPostion = .0,
+    this.offsetChanged,
+    this.handleColor = Colors.black,
+  });
 
   @override
   DraggableHandlerState createState() {
@@ -63,27 +68,30 @@ class DraggableHandlerState extends State<DraggableHandler> {
   }
 
   Widget handlerStick() {
-    return SizedBox(
-      width: 20.0,
-      child: Stack(
-        children: [
-          Center(
-            child: Container(
-              color: Colors.black,
-              width: 3,
-            ),
-          ),
-          Center(
-            child: Container(
-              width: 20,
-              height: 20,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.black,
+    return FractionallySizedBox(
+      widthFactor: 0.05,
+      child: Container(
+        color: Colors.transparent,
+        child: Stack(
+          children: [
+            Center(
+              child: Container(
+                color: widget.handleColor,
+                width: 3,
               ),
             ),
-          ),
-        ],
+            Center(
+              child: Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: widget.handleColor,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

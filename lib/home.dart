@@ -27,12 +27,16 @@ class _HomePageState extends State<HomePage> {
               width: size.width * 0.8,
               child: TwentyTwenty(
                 key: twentyKey,
-                defaulPostion: 0.7,
-                firstChild: Container(color: Colors.red),
+                handleColor: Colors.white,
+                firstChild: Image(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(
+                      "https://d33wubrfki0l68.cloudfront.net/b3df57665d1b6eca0bb5ade611ba19a5439cdc70/f5820/playground/uploads/upload/upload/28/sample-after.png"),
+                ),
                 secondeChild: Image(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      "https://i1.wp.com/angularscript.com/wp-content/uploads/2018/06/Progressively-Loading-Images-With-Blur-Effect-min.png"),
+                      "https://d33wubrfki0l68.cloudfront.net/b3df57665d1b6eca0bb5ade611ba19a5439cdc70/f5820/playground/uploads/upload/upload/28/sample-after.png"),
                 ),
               ),
             ),

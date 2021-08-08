@@ -7,6 +7,7 @@ class TwentyTwenty extends StatefulWidget {
   final Widget? secondeChild;
   final double? width;
   final double? defaulPostion;
+  final Color? handleColor;
 
   const TwentyTwenty({
     @required this.key,
@@ -14,6 +15,7 @@ class TwentyTwenty extends StatefulWidget {
     @required this.secondeChild,
     this.width,
     this.defaulPostion = 0.0,
+    this.handleColor = Colors.black,
   });
 
   @override
@@ -24,7 +26,7 @@ class _TwentyTwentyState extends State<TwentyTwenty> {
   GlobalKey handlKey = GlobalKey();
   GlobalKey? twentyTwentyKey;
   double? currentWidth;
-  double horizontalPosition = 0.0;
+  double horizontalPosition = .0;
 
   @override
   void initState() {
@@ -54,7 +56,8 @@ class _TwentyTwentyState extends State<TwentyTwenty> {
           child: widget.secondeChild as Widget,
         ),
         DraggableHandler(
-          defaulPostion: 0.0,
+          defaulPostion: horizontalPosition,
+          handleColor: widget.handleColor,
           valueChanged: (value) {
             print(value);
             setState(() {
